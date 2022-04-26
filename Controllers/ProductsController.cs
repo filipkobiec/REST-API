@@ -36,6 +36,12 @@ namespace REST_API.Controllers
             return await _mediator.Send(new InsertProductCommand(product));
         }
 
+        [HttpPut()]
+        public async Task<Product> Put([FromBody] Product product)
+        {
+            return await _mediator.Send(new UpdateProductCommand(product));
+        }
+
         [HttpDelete()]
         public async Task<Product> Delete(int id)
         {
