@@ -35,5 +35,11 @@ namespace REST_API.Controllers
         {
             return await _mediator.Send(new InsertProductCommand(product));
         }
+
+        [HttpDelete()]
+        public async Task<Product> Delete(int id)
+        {
+            return await _mediator.Send(new DeleteProductCommand(id));
+        }
     }
 }
