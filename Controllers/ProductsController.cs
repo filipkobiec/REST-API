@@ -1,4 +1,5 @@
-﻿using EFDataAccessLibrary.Models;
+﻿using EFDataAccessLibrary.Commands;
+using EFDataAccessLibrary.Models;
 using EFDataAccessLibrary.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -27,6 +28,12 @@ namespace REST_API.Controllers
         public async Task<Product> Get(int id)
         {
             return await _mediator.Send(new GetProductByIdQuery(id));
+        }
+
+        [HttpPost()]
+        public async Task<Product> Post([FromBody] Product product)
+        {
+            return await _mediator.Send(new InsertProductCommand(product));
         }
     }
 }
