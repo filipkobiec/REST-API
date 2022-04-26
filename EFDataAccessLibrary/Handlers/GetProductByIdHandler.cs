@@ -16,7 +16,7 @@ namespace EFDataAccessLibrary.Handlers
         }
         public async Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
-            return _data.GetProductById(request.id);
+            return _data.GetById(request.id);
         }
     }
 }

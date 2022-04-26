@@ -6,11 +6,13 @@ namespace EFDataAccessLibrary.DataAccess
     {
         IEnumerable<Product> GetAllProducts();
 
-        Product GetProductById(int id);
+        Product GetById(int id);
 
-        Product InsertProduct(Product product);
+        Product Insert(Product product);
 
-        Product DeleteProduct(int id);
+        Product Update(Product product);
+
+        Product Delete(int id);
 
         int SaveChanges();
     }

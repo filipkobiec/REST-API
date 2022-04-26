@@ -16,7 +16,7 @@ namespace EFDataAccessLibrary.Handlers
         }
         public Task<Product> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
-            var savedProduct = _data.InsertProduct(request.product);
+            var savedProduct = _data.Insert(request.product);
             _data.SaveChanges();
             return Task.FromResult(savedProduct);
         }

@@ -12,9 +12,19 @@ namespace EFDataAccessLibrary.DataAccess
             _context = context;
         }
 
-        public Product DeleteProduct(int id)
+        public Product GetById(int id) => _context.Products.FirstOrDefault(p => p.Id == id);
+        public IEnumerable<Product> GetAllProducts() => _context.Products;
+
+        public Product Update(Product product)
         {
-            var product = GetProductById(id);
+            var entity = _context.Products.Attach(product);
+            entity.State = EntityState.Modified;
+            return product;
+        }
+
+        public Product Delete(int id)
+        {
+            var product = GetById(id);
 
             if (product != null)
             {
@@ -24,11 +34,7 @@ namespace EFDataAccessLibrary.DataAccess
             return product;
         }
 
-        public IEnumerable<Product> GetAllProducts() => _context.Products;
-
-        public Product GetProductById(int id) => _context.Products.FirstOrDefault(p => p.Id == id);
-
-        public Product InsertProduct(Product product)
+        public Product Insert(Product product)
         {
             _context.Products.Add(product);
             return product;
