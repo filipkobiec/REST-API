@@ -16,7 +16,7 @@ namespace EFDataAccessLibrary.Handlers
         }
         public Task<Product> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            var deletedProduct = Task.FromResult(_data.DeleteProduct(request.id));
+            var deletedProduct = Task.FromResult(_data.Delete(request.id));
             _data.SaveChanges();
             return deletedProduct;
         }
