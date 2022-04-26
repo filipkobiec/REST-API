@@ -16,6 +16,18 @@ namespace EFDataAccessLibrary.DataAccess
             _context = context;
         }
 
+        public Product DeleteProduct(int id)
+        {
+            var product = GetProductById(id);
+
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+            }
+
+            return product;
+        }
+
         public IEnumerable<Product> GetAllProducts() => _context.Products;
 
         public Product GetProductById(int id) => _context.Products.FirstOrDefault(p => p.Id == id);

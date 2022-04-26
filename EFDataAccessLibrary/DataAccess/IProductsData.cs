@@ -10,6 +10,8 @@ namespace EFDataAccessLibrary.DataAccess
 
         Product InsertProduct(Product product);
 
+        Product DeleteProduct(int id);
+
         int SaveChanges();
     }
 }
