@@ -7,5 +7,9 @@ namespace EFDataAccessLibrary.DataAccess
         IEnumerable<Product> GetAllProducts();
 
         Product GetProductById(int id);
+
+        Product InsertProduct(Product product);
+
+        int SaveChanges();
     }
 }

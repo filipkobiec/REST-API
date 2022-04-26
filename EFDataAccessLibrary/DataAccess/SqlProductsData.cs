@@ -19,5 +19,13 @@ namespace EFDataAccessLibrary.DataAccess
         public IEnumerable<Product> GetAllProducts() => _context.Products;
 
         public Product GetProductById(int id) => _context.Products.FirstOrDefault(p => p.Id == id);
+
+        public Product InsertProduct(Product product)
+        {
+            _context.Products.Add(product);
+            return product;
+        }
+
+        public int SaveChanges() => _context.SaveChanges();
     }
 }
