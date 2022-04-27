@@ -8,9 +8,9 @@ namespace EFDataAccessLibrary.Handlers
 {
     public class DeleteProductHandler : IRequestHandler<DeleteProductCommand, Product>
     {
-        private readonly IProductsData _data;
+        private readonly IProductsRepository _data;
 
-        public DeleteProductHandler(IProductsData data)
+        public DeleteProductHandler(IProductsRepository data)
         {
             _data = data;
         }

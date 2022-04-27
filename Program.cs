@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ProductsContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddMediatR(typeof(AccessLibraryMediatREntrypoint).Assembly);
-builder.Services.AddScoped<IProductsData, SqlProductsData>();
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
 
 
 var app = builder.Build();

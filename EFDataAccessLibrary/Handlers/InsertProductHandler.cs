@@ -8,9 +8,9 @@ namespace EFDataAccessLibrary.Handlers
 {
     public class InsertProductHandler : IRequestHandler<InsertProductCommand, Product>
     {
-        private readonly IProductsData _data;
+        private readonly IProductsRepository _data;
 
-        public InsertProductHandler(IProductsData data)
+        public InsertProductHandler(IProductsRepository data)
         {
             _data = data;
         }

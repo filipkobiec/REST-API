@@ -8,9 +8,9 @@ namespace EFDataAccessLibrary.Handlers
 {
     public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, Product>
     {
-        private readonly IProductsData _data;
+        private readonly IProductsRepository _data;
 
-        public GetProductByIdHandler(IProductsData data)
+        public GetProductByIdHandler(IProductsRepository data)
         {
             _data = data;
         }

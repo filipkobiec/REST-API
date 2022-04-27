@@ -8,9 +8,9 @@ namespace EFDataAccessLibrary.Handlers
 {
     public class UpdateProductHandler : IRequestHandler<UpdateProductCommand, Product>
     {
-        private readonly IProductsData _data;
+        private readonly IProductsRepository _data;
 
-        public UpdateProductHandler(IProductsData data)
+        public UpdateProductHandler(IProductsRepository data)
         {
             _data = data;
         }
