@@ -4,6 +4,7 @@ using EFDataAccessLibrary.Handlers;
 using EFDataAccessLibrary.Models;
 using FluentAssertions;
 using Moq;
+using Shouldly;
 using System;
 using System.Linq;
 using System.Threading;
@@ -35,6 +36,8 @@ namespace UnitTests.Products.Commands
             var handler = new UpdateProductHandler(_mockRepository.Object);
 
             var result = await handler.Handle(new UpdateProductCommand(_updatedProduct), CancellationToken.None);
+
+            result.ShouldBeOfType<Product>();
 
             result.Should().BeEquivalentTo(_updatedProduct, options =>
             {
