@@ -52,7 +52,7 @@ namespace EFDataAccessLibrary.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2020, 4, 3, 13, 20, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 27, 3, 17, 26, 521, DateTimeKind.Local).AddTicks(5927),
                             Name = "Product1",
                             Price = 1m,
                             ShortDescription = "Very cool product1"
@@ -60,7 +60,7 @@ namespace EFDataAccessLibrary.Migrations
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2020, 5, 3, 11, 30, 33, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 27, 3, 17, 26, 521, DateTimeKind.Local).AddTicks(5954),
                             Name = "Product2",
                             Price = 2m,
                             ShortDescription = "Very cool product2"
@@ -68,7 +68,7 @@ namespace EFDataAccessLibrary.Migrations
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(2021, 5, 6, 8, 20, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 27, 3, 17, 26, 521, DateTimeKind.Local).AddTicks(5957),
                             Name = "Product3",
                             Price = 3m,
                             ShortDescription = "Very cool product3"
@@ -76,7 +76,7 @@ namespace EFDataAccessLibrary.Migrations
                         new
                         {
                             Id = 4,
-                            CreationDate = new DateTime(2022, 1, 3, 15, 30, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 27, 3, 17, 26, 521, DateTimeKind.Local).AddTicks(5959),
                             Name = "Product4",
                             Price = 4m,
                             ShortDescription = "Very cool product4"

@@ -9,9 +9,13 @@
 
   <ItemGroup>
     <Compile Remove="EFDataAccessLibrary\**" />
+    <Compile Remove="UnitTests\**" />
     <Content Remove="EFDataAccessLibrary\**" />
+    <Content Remove="UnitTests\**" />
     <EmbeddedResource Remove="EFDataAccessLibrary\**" />
+    <EmbeddedResource Remove="UnitTests\**" />
     <None Remove="EFDataAccessLibrary\**" />
+    <None Remove="UnitTests\**" />
   </ItemGroup>
 
   <ItemGroup>
