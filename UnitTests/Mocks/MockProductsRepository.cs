@@ -27,6 +27,19 @@ namespace UnitTests.Mocks
                 return products.FirstOrDefault(p => p.Id == id);
             });
 
+            mockRepository.Setup(r => r.Update(It.IsAny<Product>())).Returns((Product product) =>
+            {
+                var productToUpdate = products.FirstOrDefault(p => p.Id == product.Id);
+                if (productToUpdate != null)
+                {
+                    productToUpdate.Name = product.Name;
+                    productToUpdate.ShortDescription = product.ShortDescription;
+                    productToUpdate.Price = product.Price;
+                }
+
+                return productToUpdate;
+            });
+
             mockRepository.Setup(r => r.Insert(It.IsAny<Product>())).Returns((Product product) =>
             {
                 products.Add(product);
